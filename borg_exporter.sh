@@ -51,7 +51,7 @@ function getBorgDataForRepository {
     COUNTER=$(echo "$ARCHIVES" | wc -l)
     TODAY=$(date +%Y-%m-%d)
     BACKUPS_TODAY=$(echo "$ARCHIVES" | grep ", $TODAY ")
-    BACKUPS_TODAY_COUNT=$(echo -n "$BACKUPS_TODAY" | wc -l)
+    BACKUPS_TODAY_COUNT=$(echo "$BACKUPS_TODAY" | wc -l)
 
     #extract data for last archive
     LAST_ARCHIVE=$(BORG_PASSPHRASE=$BORG_PASSPHRASE borg list  --last 1 $REPOSITORY)
